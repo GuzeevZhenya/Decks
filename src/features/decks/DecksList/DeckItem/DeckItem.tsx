@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Deck } from '../../decks-api'
 import s from './DeckItem.module.css'
-import { removeDeckTC, updateDeckTC } from '../../decks-thunks'
+// import { removeDeckTC, updateDeckTC } from '../../decks-thunks'
 import { useAppDispatch } from '../../../../app/store'
 
 type DeckProps = {
@@ -14,16 +14,16 @@ export const DeckItem = ({ deck }: DeckProps) => {
   const isTestingDeck = deck.author.name === TEST_ACC_NAME
 
   const dispatch = useAppDispatch()
-  const name = useSelector((state) => state.decks.deckName)
+  // const name = useSelector((state) => state.decks.deckName)
 
-  const deleteDeck = (e) => {
-    console.log(deck)
-    dispatch(removeDeckTC(deck.id))
-  }
+  // const deleteDeck = (e) => {
+  //   console.log(deck)
+  //   dispatch(removeDeckTC(deck.id))
+  // }
 
-  const updateDeck = (e) => {
-    dispatch(updateDeckTC(deck.id, name))
-  }
+  // const updateDeck = (e) => {
+  //   dispatch(updateDeckTC(deck.id, name))
+  // }
   return (
     <li key={deck.id} className={s.item}>
       <h3 className={s.title}>
@@ -40,12 +40,12 @@ export const DeckItem = ({ deck }: DeckProps) => {
         <b>Updated:</b> {new Date(deck.updated).toLocaleString('ru-Ru')}
       </p>
 
-      {isTestingDeck && (
+      {/* {isTestingDeck && (
         <div className={s.buttonBox}>
           <button onClick={updateDeck}>update</button>
           <button onClick={deleteDeck}>delete</button>
         </div>
-      )}
+      )} */}
     </li>
   )
 }
